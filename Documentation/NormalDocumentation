@@ -1,0 +1,19 @@
+// MAIN DOCS
+- jeremy mathew
+
+This application uses Python, this assumes you have python v3.x.x installed on your computer.
+Pip should also be installed to get various libaries
+
+// Dependancies used
+
+CustomTkinter - a better version of tkinter (used for ui) (aka ctk)
+https://customtkinter.tomschimansky.com/
+
+// instructions 
+
+1. install the dependancies
+
+run this
+```
+    python -m pip install -r requirements.txt
+```
