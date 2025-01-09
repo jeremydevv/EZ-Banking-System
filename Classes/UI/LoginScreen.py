@@ -1,7 +1,14 @@
 import customtkinter as ctk
 import re
-import Classes.UI.Padding as pd
-import Classes.UI.CTkplace as ctPlace
+
+def pad(element,sides):
+    for side , amount in sides:
+        element.pack(side=side,padx=amount,pady=amount)
+    return element
+
+def place(element,x,y,anchorPlacement):
+    element.place(x,y,anchor=anchorPlacement)
+    return element
 
 class init():
 
@@ -14,23 +21,23 @@ class init():
         app.title("Login Screen")
 
         MainFrame = ctk.CTkFrame(master=app)
-        ctPlace.place(0.5,0.5,ctk.CENTER)
+        place(0.5,0.5,ctk.CENTER)
 
         self.EZBankingTitle = ctk.CTkLabel(MainFrame, text="EZ Banking", fg_color="transparent")
-        ctPlace.place(0.5,0.05,ctk.CENTER)
-        pd.pad(self.SlimeBanking, {ctk.TOP: 5, ctk.BOTTOM: 0, ctk.LEFT: 5, ctk.RIGHT: 5})
+        place(0.5,0.05,ctk.CENTER)
+        pad(self.SlimeBanking, {ctk.TOP: 5, ctk.BOTTOM: 0, ctk.LEFT: 5, ctk.RIGHT: 5})
 
         self.usernameInput = ctk.CTkEntry(MainFrame, placeholder_text="Username")
-        ctPlace.place(0.5,0.3,ctk.CENTER)
-        pd.pad(self.usernameInput, {ctk.TOP: 5, ctk.BOTTOM: 0, ctk.LEFT: 5, ctk.RIGHT: 5})
+        place(0.5,0.3,ctk.CENTER)
+        pad(self.usernameInput, {ctk.TOP: 5, ctk.BOTTOM: 0, ctk.LEFT: 5, ctk.RIGHT: 5})
 
         self.passwordInput = ctk.CTkEntry(MainFrame, placeholder_text="Password", show="*")
-        ctPlace.place(0.5,0.4,ctk.CENTER)
-        pd.pad(self.passwordInput, {ctk.TOP: 5, ctk.BOTTOM: 0, ctk.LEFT: 5, ctk.RIGHT: 5})
+        place(0.5,0.4,ctk.CENTER)
+        pad(self.passwordInput, {ctk.TOP: 5, ctk.BOTTOM: 0, ctk.LEFT: 5, ctk.RIGHT: 5})
         
         self.LoginButton = ctk.CTkButton(MainFrame, text="Log in", command=self.login_request)
-        ctPlace.place(0.5,0.1,ctk.CENTER)
-        pd.pad(self.LoginButton, {ctk.TOP: 20, ctk.BOTTOM: 10, ctk.LEFT: 5, ctk.RIGHT: 5})
+        place(0.5,0.1,ctk.CENTER)
+        pad(self.LoginButton, {ctk.TOP: 20, ctk.BOTTOM: 10, ctk.LEFT: 5, ctk.RIGHT: 5})
 
         app.mainloop()
 
